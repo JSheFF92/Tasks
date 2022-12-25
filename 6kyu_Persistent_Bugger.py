@@ -1,5 +1,21 @@
 def persistence(n):
 
+    digits = [int(i) for i in str(n)]
+    i = 0
+
+    while len(digits) > 1:
+        i += 1
+
+        ## переумножение
+        result = 1
+        for x in digits:
+            result = result * x
+            digits = [int(i) for i in str(result)]
+
+    return i
+
+if __name__ == "__main__":
+    persistence(999)
 # Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 #
 # For example (Input --> Output):
@@ -10,5 +26,3 @@ def persistence(n):
 
 
 
-if __name__ == "__main__":
-    persistence(9119)
